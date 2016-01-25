@@ -13,7 +13,7 @@ class bartender (
     path   => $install_path
   } ~>
   exec { 'launch bartender':
-    command     => "/usr/bin/open ${install_path}",
+    command     => "/usr/bin/open '${install_path}'",
     refreshonly => true,
   }
 }
