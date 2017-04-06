@@ -7,12 +7,12 @@ class bartender (
 ) {
   package { 'bartender':
     provider => 'brewcask'
-  }->
-  osx_login_item { 'Bartender 2':
+  }
+  -> osx_login_item { 'Bartender 2':
     hidden => true,
     path   => $install_path
-  } ~>
-  exec { 'launch bartender':
+  }
+  ~> exec { 'launch bartender':
     command     => "/usr/bin/open '${install_path}'",
     refreshonly => true,
   }
